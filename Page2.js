@@ -2,12 +2,12 @@ import React, {useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Navigation} from 'react-native-navigation';
 
-function App({componentId}) {
+function Page2({componentId}) {
   useEffect(() => {
     setTimeout(() => {
-      Navigation.push(componentId, {
-        component: {
-          name: 'Page2',
+      Navigation.mergeOptions(componentId, {
+        navigationBar: {
+          visible: false,
         },
       });
     }, 2000);
@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     left: 0,
-    backgroundColor: 'blue',
+    backgroundColor: 'red',
   },
 });
 
-export default App;
+export default Page2;
